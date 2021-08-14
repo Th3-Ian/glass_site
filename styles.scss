@@ -1,0 +1,75 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin circleBg {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    to right bottom,
+    rgba(241, 104, 24, 0.801),
+    rgba(253, 100, 29, 0.3)
+  );
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  @include flexCenter();
+  min-height: 100vh;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+.glass {
+  background: white;
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 25px;
+  z-index: 3;
+  backdrop-filter: blur(1.5rem);
+}
+
+.circle1 {
+  @include circleBg();
+
+  top: 8%;
+  right: 14%;
+}
+
+.circle2 {
+  @include circleBg();
+
+  height: 200px;
+  width: 200px;
+  left: 16%;
+  bottom: 18%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(241, 104, 24, 0.801),
+    rgba(253, 100, 29, 0.3)
+  );
+}
+
+.circle3 {
+  @include circleBg();
+
+  height: 275px;
+  width: 275px;
+  left: 48%;
+  bottom: 32%;
+}
