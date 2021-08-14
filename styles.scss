@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&family=Quicksand&display=swap");
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin headerColor {
+  color: #426696;
+  font-weight: 700;
+  opacity: 0.8;
 }
 
 @mixin circleBg {
@@ -22,6 +30,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Chivo", sans-serif;
+}
+
+h1 {
+  @include headerColor();
+  font-size: 48px;
+}
+
+h2,
+p {
+  @include headerColor();
+  font-weight: 400;
+}
+
+h3 {
+  @include headerColor();
 }
 
 main {
@@ -31,6 +55,7 @@ main {
 }
 
 .glass {
+  display: flex;
   background: white;
   min-height: 80vh;
   width: 60%;
@@ -72,4 +97,112 @@ main {
   width: 275px;
   left: 48%;
   bottom: 32%;
+}
+
+.dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(241, 104, 24, 0.801),
+    rgba(253, 100, 29, 0.02)
+  );
+}
+
+.link {
+  display: flex;
+  margin: 16px 0;
+  padding: 8px 40px;
+  align-items: center;
+}
+
+.pro {
+  position: relative;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  border-radius: 16px;
+  color: white;
+  padding: 32px 16px;
+
+  img {
+    position: absolute;
+    top: -10%;
+    right: 8%;
+  }
+
+  h2 {
+    width: 40%;
+    color: white;
+    font-weight: 700;
+  }
+}
+
+.status {
+  margin-bottom: 3rem;
+}
+
+.status input {
+  background: linear-gradient(
+    to right bottom,
+    rgba(241, 104, 24, 0.801),
+    rgba(253, 100, 29, 0.02)
+  );
+  border: none;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+
+.games {
+  margin: 5rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 2;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 16px;
+  margin: 32px 0;
+  padding: 32px;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
+}
+
+.progress {
+  position: relative;
+  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  width: 100%;
+  height: 25%;
+  border-radius: 16px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(236, 236, 236);
+    position: absolute;
+    left: 60%;
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.percentage {
+  font-weight: 900;
+  color: rgba(241, 104, 24, 0.8);
 }
